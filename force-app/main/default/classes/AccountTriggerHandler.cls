@@ -4,7 +4,7 @@ public with sharing class AccountTriggerHandler extends TriggerHandler {
   list<Account> accListOld;
 
   public AccountTriggerHandler() {
-    accListNew = (list<Account>) Trigger.New;
+    accListNew = (list<Account>) Trigger.New;a
     accOldMap = (map<Id, Account>) Trigger.oldMap;
     accListOld = (list<Account>) Trigger.Old;
   }
