@@ -1,0 +1,13 @@
+{
+  "status": 500,
+  "body": {
+    "exceptionType": "System.NullPointerException",
+    "isUserDefinedException": false,
+    "message": "null input to JSON parser",
+    "stackTrace": "(System Code)\nClass.JobApplicationController.createJobApplicationWithDocumentShare: line 132, column 1"
+  },
+  "headers": {},
+  "ok": false,
+  "statusText": "Server Error",
+  "errorType": "fetchResponse"
+}

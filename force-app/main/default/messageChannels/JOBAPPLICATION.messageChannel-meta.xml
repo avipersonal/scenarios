@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>JobApplicationChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>This Lightning Message Channel sends information from Job Application List to Related Application component</description>
+    <lightningMessageFields>
+        <fieldName>recordId</fieldName>
+        <description>Job Application data</description>
+    </lightningMessageFields>
+     <lightningMessageFields>
+        <fieldName>status</fieldName>
+        <description>Row selected or unselected</description>
+    </lightningMessageFields>
+     <lightningMessageFields>
+        <fieldName>recordData</fieldName>
+        <description>Row selected or unselected</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

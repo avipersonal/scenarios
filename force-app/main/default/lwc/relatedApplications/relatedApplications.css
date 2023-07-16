@@ -1,0 +1,15 @@
+.container {
+    min-height: 250px;
+}
+
+.item-none-container {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-container {
+    position: relative;
+    min-height: 250px;
+}

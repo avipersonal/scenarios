@@ -1,0 +1,97 @@
+<template>
+   <lightning-card>
+      <template lwc:if={isLoading}>
+         <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+      </template>
+     <template lwc:else>
+        <template lwc:if={showModal}>
+           <div class="custom-modal">
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+               <div class="slds-modal__container">
+                  <header class="slds-modal__header">
+                     <span class="slds-modal__close">
+                        <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="close"></lightning-icon>
+                     </span>
+                     <h2 class="slds-text-heading_medium slds-hyphenate">Modal Header</h2>
+                  </header>
+                  <div class="slds-modal__content slds-p-around_medium">
+                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                  <footer class="slds-modal__footer">
+                     <lightning-button label="Cancel" title="Cancel" class="slds-m-right_small"></lightning-button>
+                     <lightning-button variant="brand" label="Save" title="Save" onclick={closeSuccessModal}></lightning-button>
+                  </footer>
+               </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+           </div>
+        </template>
+        <div class="slds-var-m-around_medium">
+           <lightning-input type="text" variant="standard" name="Number of Passengers" label="Number of Passengers" placeholder="type here..." onchange={handlePassengerChange} required></lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+          <lightning-layout multiple-rows class="slds-text-align_center">
+              <template for:each={airTypes} for:item="aircraft">
+                  <lightning-layout-item size="12" key={aircraft.sortOrder} padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="3" >
+                      <template if:true={aircraft.isSelected}>          
+                         <button class="slds-button slds-button_neutral slds-button_stateful slds-is-selected-clicked aircraft-type-button-disabled" data-id={aircraft.sortOrder} aria-live="assertive" aria-pressed="true" onclick={handleButtonClicked}>
+                             <span class="slds-text-not-selected">
+                                 <div class="slds-media button-media">
+                                     <div class="slds-media__figure">
+                                         <lightning-icon icon-name="utility:add" size="xx-small" alternative-text="Doc image" ></lightning-icon>
+                                      </div>
+                                      <div class="slds-media__body slds-var-m-left_small">
+                                         <p>{aircraft.label}</p>
+                                         <p>{aircraft.description}</p>
+                                      </div>
+                                 </div>
+                              </span>   
+                             <span class="slds-text-selected">
+                                  <div class="slds-media button-media">
+                                     <div class="slds-media__figure">
+                                         <lightning-icon icon-name="utility:check" size="xx-small" alternative-text="Doc image" ></lightning-icon>
+                                      </div>
+                                      <div class="slds-media__body slds-var-m-left_small">
+                                         <p>{aircraft.label}</p>
+                                         <p>{aircraft.description}</p>
+                                      </div>
+                                 </div>
+                              </span>
+                          </button>      
+                      </template>
+                      <template if:false={aircraft.isSelected}>
+                          <button class="slds-button slds-button_neutral slds-button_stateful slds-not-selected aircraft-type-button-disabled" data-id={aircraft.sortOrder} aria-live="assertive" aria-pressed="false" onclick={handleButtonClicked}>
+                             <span class="slds-text-not-selected">
+                                 <div class="slds-media button-media">
+                                     <div class="slds-media__figure">
+                                         <lightning-icon icon-name="utility:add" size="xx-small" alternative-text="Doc image" ></lightning-icon>
+                                      </div>
+                                      <div class="slds-media__body slds-var-m-left_small">
+                                         <p>{aircraft.label}</p>
+                                         <p>{aircraft.description}</p>
+                                      </div>
+                                 </div>
+                              </span>   
+                             <span class="slds-text-selected">
+                                  <div class="slds-media button-media">
+                                     <div class="slds-media__figure">
+                                         <lightning-icon icon-name="utility:check" size="xx-small" alternative-text="Doc image" ></lightning-icon>
+                                      </div>
+                                      <div class="slds-media__body slds-var-m-left_small">
+                                         <p>{aircraft.label}</p>
+                                         <p>{aircraft.description}</p>
+                                      </div>
+                                 </div>
+                              </span>
+                          </button>   
+                      </template>
+                  </lightning-layout-item>   
+              </template>
+          </lightning-layout>
+        </div>
+        <div class="slds-var-m-around_large">
+           <lightning-button variant="neutral" label="Submit" title="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+      </template>
+   </lightning-card>
+</template>

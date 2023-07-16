@@ -1,0 +1,73 @@
+:host {
+   font-family: sans-serif;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #f8f8f8;
+}
+
+tbody {
+    min-height: 350px;
+}
+
+table, th, td {
+    border: 2px solid #cacaca;
+}
+
+th, td {
+    text-align: center;
+}
+
+td {
+    padding: 2px 0;
+}
+
+th {
+    padding: 6px 0;
+}
+
+tbody tr:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+tbody .row-selected {
+    background-color: #fff5e4 !important;
+    cursor: pointer;
+}
+
+.no-data-row {
+    height: 250px;
+}
+
+tbody .no-data-row:hover {
+    cursor:default;
+    background-color: #ffffff;
+}
+
+.button-groups {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-color {
+    --slds-c-icon-color-foreground-default: #3366CC;
+}
+
+.icon-color:disabled {
+    --slds-c-icon-color-foreground-default: #9f9f9f;
+}
+
+.spinner-container {
+    position: relative;
+    margin: 0 auto;
+    min-height: 350px;
+}

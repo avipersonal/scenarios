@@ -1,0 +1,44 @@
+<template>
+    <lightning-card>
+        <div class="container">
+            <template lwc:if={isSelected}>
+                <section>
+                    <h2 class="slds-text-heading_medium slds-var-m-bottom_medium slds-var-m-left_medium">Related
+                        Applications</h2>
+                    <template lwc:if={isLoading}>
+                        <div class="loading-container">
+                            <lightning-spinner size="x-large" variant="brand"
+                            alternative-text="loading"></lightning-spinner>
+                        <!-- <div class="slds-spinner_container">
+                               <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                 <span class="slds-assistive-text">Loading</span>
+                                 <div class="slds-spinner__dot-a"></div>
+                                 <div class="slds-spinner__dot-b"></div>
+                               </div>
+                           </div> -->
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <template lwc:if={isRelatedAppAvailable}>
+                            <template for:each={relatedJobApplicationList} for:item="relJobApp">
+                                <c-job-application-tile key={relJobApp.Id} data-id={relJobApp.Id}
+                                    job-application={relJobApp}
+                                    onclick={handleJobAppTileClick}></c-job-application-tile>
+                            </template>
+                        </template>
+                        <template lwc:else>
+                            <div class="slds-text-align_center slds-var-p-around_large">
+                                We can't find any related application by Position.
+                            </div>
+                        </template>
+                    </template>
+                </section>
+            </template>
+            <template lwc:else>
+                <div class="item-none-container">
+                    <p>Select any row to see related applications. :)</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
