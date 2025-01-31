@@ -1,2 +1,2 @@
 # About this Repository
-Contain code for 30+ Trigger scenarios of sobject comprising Account, Contact, Opportunity, OpportunityLineItem, Case, Lead, Task, ContentDocument, and ContentVersion.
+Contains code for 30+ trigger scenarios of SObject comprising Account, Contact, Opportunity, OpportunityLineItem, Case, Lead, Task, ContentDocument, and ContentVersion.
